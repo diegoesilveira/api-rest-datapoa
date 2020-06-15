@@ -10,7 +10,9 @@ import org.springframework.web.client.RestTemplate;
 
 import br.com.consumerapi.domain.Linha;
 import br.com.consumerapi.repositories.LinhaRepository;
+import br.com.consumerapi.resources.exception.FieldMessage;
 import br.com.consumerapi.services.exception.ObjectNotFoundException;
+import net.bytebuddy.implementation.bytecode.Throw;
 
 @Service
 public class LinhaService {
@@ -52,8 +54,8 @@ public class LinhaService {
 		return repository.save(idLinha);
 	}
 	
-	public Linha update(Linha linha) {
-		return repository.save(linha);
+	public Linha update(Linha id) {
+		return repository.save(id);
 	}
 
 	public void delete(Long cod) {

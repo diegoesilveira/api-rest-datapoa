@@ -90,8 +90,8 @@ public class LinhaResource {
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> update(@RequestBody @Valid Linha linha, @PathVariable String id) {
-		linha.setId(id);
+	public ResponseEntity<Void> update(@RequestBody @Valid Linha linha, @PathVariable Long id) {
+		linha.setCod(id);
 		linha = service.update(linha);
 		return ResponseEntity.noContent().build();
 	}
