@@ -63,9 +63,9 @@ public class LinhaResource {
 
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Linha> findByID(@PathVariable String id) {
-		Linha obj = service.findByIdLinha(id);
+	@RequestMapping(value = "/idlinha}", method = RequestMethod.GET)
+	public ResponseEntity<Linha> findByID(@RequestParam(value = "value") String idLinha) {
+		Linha obj = service.findByIdLinha(idLinha);
 		return ResponseEntity.ok().body(obj);
 	}
 
