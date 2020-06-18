@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class Itinerario implements Serializable {
 
 	private String codigo;
 
-	@Embedded
+	@ElementCollection
 	@CollectionTable(name="itineratio_rota", joinColumns = @JoinColumn(name="itinerario_id"))
 	@MapKeyColumn(name="rota")
 	private Map<String, Rota> rotas;

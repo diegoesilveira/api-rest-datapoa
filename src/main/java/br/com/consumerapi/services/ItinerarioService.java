@@ -48,6 +48,7 @@ public class ItinerarioService {
 		return obj.orElseThrow(
 				() -> new ObjectNotFoundException("Codigo não encontrado! Id: " + id + ", Tipo: " + Linha.class.getName()));
 	}
+	
 		
 	public Itinerario insert(Itinerario id) {
 		id.setCodigo(null);

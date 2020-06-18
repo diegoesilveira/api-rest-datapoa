@@ -63,7 +63,7 @@ public class LinhaResource {
 
 	}
 
-	@RequestMapping(value = "/idlinha}", method = RequestMethod.GET)
+	@RequestMapping(value = "/idlinha", method = RequestMethod.GET)
 	public ResponseEntity<Linha> findByID(@RequestParam(value = "value") String idLinha) {
 		Linha obj = service.findByIdLinha(idLinha);
 		return ResponseEntity.ok().body(obj);
@@ -81,11 +81,10 @@ public class LinhaResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> insert(@RequestBody @Valid Linha linha) {
-
 		linha = service.insert(linha);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(linha.getId()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{cod}").buildAndExpand(linha.getCod()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
 

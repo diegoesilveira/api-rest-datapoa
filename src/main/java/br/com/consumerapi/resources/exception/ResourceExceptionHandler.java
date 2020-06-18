@@ -8,13 +8,14 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import br.com.consumerapi.services.exception.DataIntegrityException;
 import br.com.consumerapi.services.exception.ObjectNotFoundException;
 
 
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ResourceExceptionHandler {
 	
 	@ExceptionHandler(ObjectNotFoundException.class)
